@@ -1,0 +1,26 @@
+
+# local osx metadata
+.DS_Store
+
+# local node modules cache
+node_modules
+
+# build/lint/test output
+dist
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.iml
