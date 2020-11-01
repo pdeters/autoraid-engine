@@ -6,19 +6,19 @@ export class RaidRoom extends Room {
         this.setState(new RaidState())
     
         this.onMessage("action", (client, message) => {
-          console.log('onMessage: action')
+          console.log('action received')
         });
       }
     
       onJoin (client: Client, options: any) {
-        console.log('onJoin')
+        
       }      
     
       onLeave (client: Client, consented: boolean) {
-        console.log('onLeave')
+        
       }
     
       onDispose() {
-        console.log('onDispose')
+        
       }
 }

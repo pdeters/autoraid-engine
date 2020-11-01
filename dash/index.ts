@@ -1,5 +1,5 @@
 import {Client, Room} from "colyseus.js";
-import { RaidState } from "../server/rooms/schema/RaidState";
+import { RaidState } from "../app/rooms/schema/RaidState";
 
 document.addEventListener('DOMContentLoaded', async () => {
     const client = new Client('ws://localhost:2567')
