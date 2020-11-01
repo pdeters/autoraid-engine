@@ -5,9 +5,10 @@
   "description": "npm init template for bootstraping an empty Colyseus project",
   "main": "lib/index.js",
   "scripts": {
-    "start": "ts-node-dev src/index.ts",
+    "start": "ts-node-dev server/index.ts",
     "loadtest": "colyseus-loadtest loadtest/example.ts --room my_room --numClients 2",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:ui": "parcel ui/index.html"
   },
   "author": "",
   "license": "UNLICENSED",
@@ -15,6 +16,10 @@
     "url": "https://github.com/colyseus/create-colyseus/issues"
   },
   "homepage": "https://github.com/colyseus/create-colyseus#readme",
+  "browserslist": [
+    "last 1 Chrome versions",
+    "last 1 Safari versions"
+  ],
   "devDependencies": {
     "@colyseus/loadtest": "^0.14.0",
     "@types/cors": "^2.8.6",

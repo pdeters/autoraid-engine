@@ -5,8 +5,8 @@ export class RaidRoom extends Room {
     onCreate (options: any) {
         this.setState(new RaidState())
     
-        this.onMessage("type", (client, message) => {
-          console.log('onMessage: type')
+        this.onMessage("action", (client, message) => {
+          console.log('onMessage: action')
         });
       }
     
