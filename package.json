@@ -5,15 +5,19 @@
   "description": "npm init template for bootstraping an empty Colyseus project",
   "main": "lib/index.js",
   "scripts": {
+    "clean": "rimraf ./dist ./app",
+    "start": "concurrently --kill-others-on-fail --handle-input \"npm run start:app\" \"npm run start:dash\"",
     "start:app": "nodemon --watch app -e ts --exec \"ts-node app/index.ts\"",
     "build:app": "tsc -p tsconfig.json",
     "start:dash": "parcel dash/index.html",
-    "build:dash": "parcel build dash/index.html",
-    "clean": "rimraf ./dist ./app",
-    "start": "concurrently --kill-others-on-fail --handle-input \"npm run start:app\" \"npm run start:dash\"",
+    "build:dash": "parcel build dash/index.html",    
     "bundle": "npm run clean && npm run build:app && npm run build:dash && ncp dist/ app/public",
+    "lint": "npm run lint-js && npm run lint-css",
+    "fix-lint": "npm run fix-js && npm run fix-css",
     "lint-js": "eslint --ext .js --report-unused-disable-directives --cache --cache-location out/ .",
-    "fix-js": "npm run lint-js -- --fix"
+    "fix-js": "npm run lint-js -- --fix",
+    "lint-css": "stylelint \"dash/*.{css,less,sass,scss,sss,styl}\" --report-needless-disables --report-invalid-scope-disables --ignore-path .gitignore --cache --cache-location out/",
+    "fix-css": "npm run lint-css -- --fix"  
   },
   "author": "",
   "license": "UNLICENSED",
@@ -35,6 +39,8 @@
     "eslint": "^7.12.1",
     "eslint-config-google": "^0.14.0",
     "nodemon": "^2.0.6",
+    "stylelint": "^13.7.2",
+    "stylelint-config-standard": "^20.0.0",
     "ts-node": "^8.1.0",
     "ts-node-dev": "^1.0.0-pre.63",
     "typescript": "^3.4.5"
