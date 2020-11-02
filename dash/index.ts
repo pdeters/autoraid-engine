@@ -23,4 +23,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             document.removeEventListener('keydown', handleInput);
         }
     });
+
+    raid.onMessage("heartbeat", (message) => {
+        console.log(message);
+      });
 });
